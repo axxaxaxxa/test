@@ -12,7 +12,7 @@ def visit_website(url):
     except Exception as e:
         print(f"Error visiting {url}: {e}")
 
-async def main(num_task, ulr):
+async def main(num_task, url):
     while True:
         with ThreadPoolExecutor(max_workers=num_tasks) as executor:
             tasks = [executor.submit(visit_website, url) for _ in range(num_tasks)]
